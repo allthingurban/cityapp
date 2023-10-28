@@ -1,0 +1,9 @@
+If you want upload an existing point map to define accessing points, click Map button. If you want to draw points directly on the map, click Darw. If you want to exit from the module now, click Exit.
+Click Browse button, select a map then click Submit.
+Draw points on the map then click Save.
+Add a time limit value in minutes (integer numbers only)
+Stricken area is optional. If you want to add an already existing map as stricken area, click Map button. If you want to draw one or more area directly on the screen now, click Draw button. To skip Stricken area, click Skip.
+Set speed reductio  n ratio (in percentage, without the percentage character) for roads of stricken area. Value has to be greater than 0 and less or equale to 100.
+Average speed values on road types of the area. Do you want to change them?
+Calculations are ready, display output time maps
+To exit, click OK.

@@ -1,0 +1,76 @@
+html
+  head
+    title Open City Toolkit
+
+    link(rel='stylesheet' href='/lib/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/lib/leaflet/leaflet.css')
+    link(rel='stylesheet' href='/lib/leaflet-draw/leaflet.draw.css')
+    link(rel="stylesheet" href="/lib/leaflet-basemaps/L.Control.Basemaps.css")
+    link(rel="stylesheet" href="/lib/leaflet.bigimage/Leaflet.BigImage.min.css")
+    link(rel="stylesheet" href="/lib/leaflet.control.layers.tree/L.Control.Layers.Tree.css")
+
+
+
+    script(src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js')
+    link(href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet')
+
+    script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/lib/leaflet/leaflet.js')
+    script(src='/lib/leaflet-draw/leaflet.draw.js')
+    script(src="/lib/leaflet-basemaps/L.Control.Basemaps-min.js")
+    script(src="/lib/leaflet.bigimage/Leaflet.BigImage.min.js")
+    script(src="/lib/leaflet.control.layers.tree/L.Control.Layers.Tree.js")
+
+    style
+      include style.css
+      include ../map/style.css
+
+  body
+
+    div(class='main')
+      div(class='sidebar')
+        div(class="card card-border")
+          div(class="logo")
+            img(src="images/SCI-FI.png", id="cityapp_logo", title="Cityapp SCI-FI")
+        div(id='cityapp' class='card card-border' style="height: 30px") 
+          <h5 style="color:black;text-align:center;background-color: #EDE41E">
+              <b>Spatial Planning Tool</b>
+          </h5> 
+        div(id='launch-app' class='card card-border')
+          select(id='launch-app-menu', onchange='launch_app()', class='select-menu')
+            option(selected value='') - Applications -
+            option(value='module_1a') Simple time map
+            option(value='module_1b') Accessibility map
+            option(value='module_10') Suggest a road network
+            option(value='module_2b') Query area and population by land ownership
+          
+           
+        div(id='textarea' class='dialogue_text_area')
+
+        div(id='buttonarea' class='card card-buttons row')
+
+        div(id='launch-settings' class='card card-border')
+          select(id='launch-settings-menu', onchange='launch_settings()', class='select-menu')
+            option(selected value='') - Settings -
+            option(value='add_location') Set new location
+            option(value='make_selection') Set new selection
+            option(value='resolution_setting') Set resolution
+            option(value='add_map') Add map to query mapset
+
+
+        div(id='restart' class='card card-border')
+          select(id='restart-menu', onchange='restart()', class='select-menu')
+            option(selected value='') - Reset -
+            option(onclick='restart()' selected value='RESTART') Reset the system 
+          
+      div(id='map-container' class='card')
+        include ../map/index.pug
+
+    script.
+      const geoserverUrl = '#{geoserverUrl}';
+      const [lat, lon] = [#{lat}, #{lon}];
+    script
+      include legend.js
+      include script.js
+      include ../map/script.js

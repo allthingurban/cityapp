@@ -1,0 +1,11 @@
+[
+"Motorways: 40",
+"Trunk and primary: 30",
+"Secondary roads: 25",
+"Tertiary roads: 25",
+"Connecting roads: 20",
+"Service and track roads: 20",
+"Residential roads: 20",
+"Living_streets: 15",
+"Footways: 15"
+]

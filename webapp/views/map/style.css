@@ -1,0 +1,14 @@
+#map {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+
+}
+
+#save {
+  position: absolute;
+  top: 180px;
+  left: 0;
+  margin: 10px;
+  z-index: 1000;
+}

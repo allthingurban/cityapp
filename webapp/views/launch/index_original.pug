@@ -1,0 +1,75 @@
+html
+  head
+    title Open City Toolkit
+
+    link(rel='stylesheet' href='/lib/bootstrap/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/lib/leaflet/leaflet.css')
+    link(rel='stylesheet' href='/lib/leaflet-draw/leaflet.draw.css')
+
+    script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/bootstrap/js/bootstrap.min.js')
+    script(src='/lib/leaflet/leaflet.js')
+    script(src='/lib/leaflet-draw/leaflet.draw.js')
+
+    style
+      include style.css
+      include ../map/style.css
+
+  body
+    div(class='header')
+      div(class='title')
+        h1 Open City Toolkit
+
+      div(id='help')
+        a: button(class='button button-yellow') Help
+
+    div(class='main')
+      div(class='sidebar')
+        div(id='launch-app' class='card card-border')
+          select(id='launch-app-menu' class='select-menu')
+            option(selected value='') - Applications menu -
+            option(value='module_1') Calculate time map
+            option(value='module_1a') Simple time map
+            option(value='module_1b') Accessibility map
+            option(value='module_2b') Query area and population by land ownership
+            option(value='module_10') IAUAI
+          a: button(class='button button-green' onclick='launch_app()') OK
+          
+        div(id='textarea' class='card card-border card-border-yellow')
+
+        div(id='buttonarea' class='card card-buttons row')
+
+        div(id='launch-settings' class='card card-border')
+          select(id='launch-settings-menu' class='select-menu')
+            option(selected value='') - Settings menu -
+            option(value='add_location') Set new location
+            option(value='make_selection') Set new selection
+            option(value='resolution_setting') Set resolution
+            option(value='add_map') Add map to query mapset
+          a: button(class='button button-green' onclick='launch_settings()') OK
+
+
+
+        div(id='restart' class='card card-border')
+          select(id='restart-menu' class='select-menu')
+            option(selected value='') - Reset menu -
+            option(selected value='RESTART') Reset the system 
+          a: button(class='button button-green' onclick='restart()') OK
+
+      div(id='map-container' class='card')
+        include ../map/index.pug
+
+
+      div(id='alert-anchor')
+        
+      div(id='loading')
+        div(class='loading-text') Processing …
+        div(class='spinner spinner-border')
+
+    script.
+      const geoserverUrl = '#{geoserverUrl}';
+      const [lat, lon] = [#{lat}, #{lon}];
+    script
+      include legend.js
+      include script.js
+      include ../map/script.js

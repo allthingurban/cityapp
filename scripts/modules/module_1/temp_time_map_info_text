@@ -1,0 +1,24 @@
+Map output for time map calculations
+
+Date of map creation: 2021-02-25 19:05
+
+Colors on map represents time in minutes
+Numbers of legend are time in minutes
+
+Start point: yellow cross
+Via point: purple cross
+Target point red cross
+Stricken area: black line
+
+Considered speed on roads:
+Motorways: 40
+Trunk and primary: 30
+Secondary roads: 30
+Tertiary roads: 30
+Connecting roads: 20
+Service and track roads: 20
+Residential roads: 20
+Living_streets: 5
+Footways: 3
+
+Speed reduction coefficient for stricken area: 

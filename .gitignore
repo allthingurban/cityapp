@@ -1,0 +1,5 @@
+
+webapp/node_modules/
+saved_results/
+*.pdf
+*.ods
