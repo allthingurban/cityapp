@@ -176,8 +176,125 @@ const rural_sanitation_strategy = L.tileLayer.wms(geoserverUrl + 'geoserver/vect
 	minZoom: 1,
 });
 
+const india_lulc_ghsl_ruraldensity = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_ruraldensity',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
 
-         
+const india_lulc_ghsl_urbandensity = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_urbandensity',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+
+const india_lulc_ghsl_urbanisation = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_urbanisation',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+
+const india_lulc_ghsl_highdensity_settlement = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_highdensity_settlement',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_ghsl_mediumdensity_settlement = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_mediumdensity_settlement',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_ghsl_suburban_settlement = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_suburban_settlement',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_ghsl_rural_settlement = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:ghsl_rural_settlement',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_builtup = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:lulc_builtup',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_water = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:lulc_water',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const india_lulc_cultivation = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:lulc_cultivated',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+
+const india_pop_density_2020 = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:india_pop_density',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+
+const nwmp_monitoring_settlement = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:nwmp_monitoring_settlement',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+
+const nwmp_monitoring_bod = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:nwmp_monitoring_bod',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+const nwmp_monitoring_fc = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
+    layers: 'vector:nwmp_monitoring_fc',
+    format: 'image/png',
+    transparent: true,
+    legend_yes: true,
+    maxZoom: 20,
+    minZoom: 1,
+});
+      
 // Odisha-wide  layers
                 
 const Odisha_Population = L.tileLayer.wms(geoserverUrl + 'geoserver/vector/wms', {
@@ -895,6 +1012,25 @@ var moduleMaps={
     "Project area":Module_10_Area,             
 };
 
+var indiaUrbanMaps={ 
+    '% Area change: Rural Densification(1990-2020)':india_lulc_ghsl_ruraldensity,
+    '% Area Change: Rural to Urban(1990-2020)':india_lulc_ghsl_urbanisation,
+    '% Area Change: Urban Densification (1990-2020)':india_lulc_ghsl_urbandensity,
+    '% High Density Settlement':india_lulc_ghsl_highdensity_settlement,
+    '% Medium Density Settlement':india_lulc_ghsl_mediumdensity_settlement,
+    '% Suburban Settlement':india_lulc_ghsl_suburban_settlement,
+    '% Rural Settlement':india_lulc_ghsl_rural_settlement,
+    '% Area: Builtup':india_lulc_builtup,
+    '% Area: Water':india_lulc_water,
+    '% Area: Cultivation':india_lulc_cultivation,
+    'Avergae Population Density(2020)': india_pop_density_2020,
+};
+
+var IndiaWaterPollutionLayers={
+    'Water Monitoring (Settlement Type)': nwmp_monitoring_settlement,
+    'Water Pollution (BOD) Level': nwmp_monitoring_bod,
+    'Water Pollution (FC) Level': nwmp_monitoring_fc,
+}
 
 var options_India = {
     position: ["topleft"],
@@ -919,6 +1055,7 @@ var layercontrol=L.control.layers(null,OdishaOverlayMaps,options_other).addTo(ma
 var layercontrol=L.control.layers(null,BhubaneswarOverlayMaps,options_other).addTo(map);
 var layercontrol=L.control.layers(null,DhenkanalOverlayMaps,options_other).addTo(map);
 var layercontrol=L.control.layers(null,RUConvergenceOverlayMaps,options_other).addTo(map);
+var layercontrol=L.control.layers(null,indiaUrbanMaps,options_India).addTo(map);
 //var layercontrol=L.control.layers(null,moduleMaps,options_other).addTo(map);
 
 
