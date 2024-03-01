@@ -15,6 +15,7 @@ html
     link(href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet')
 
     script(src='/lib/jquery/jquery.min.js')
+    script(src='/lib/jquery/jquery.min.js')
     script(src='/lib/bootstrap/js/bootstrap.min.js')
     script(src='/lib/leaflet/leaflet.js')
     script(src='/lib/leaflet-draw/leaflet.draw.js')
@@ -37,16 +38,21 @@ html
           <h5 style="color:black;text-align:center;background-color: #EDE41E">
               <b>Spatial Planning Tool</b>
           </h5> 
+        div(id='map-navigate' class='card card-border')
+          select(id='select-level' class='select-menu',onchange='change_center()')
+            option(selected value='default') - Select a Administrative Level -
+            option(value='India') India
+            option(value='Odisha') Odisha
+            option(value='Bhubaneswar') Bhubaneswar 
+            option(value='Dhenkanal City') Dhenkanal City
+            option(value='Dhenkanal District') Dhenkanal District
         div(id='launch-app' class='card card-border')
           select(id='launch-app-menu', onchange='launch_app()', class='select-menu')
             option(selected value='') - Applications -
-            option(value='module_1a') Simple time map
-            option(value='module_1b') Accessibility map
-            option(value='module_10') Suggest a road network
-            option(value='module_2b') Query area and population by land ownership
-          
-           
+            option(value='module_3') Query area and population by land ownership
+            option(value='module_4') Rural Sanitation Strategy
         div(id='textarea' class='dialogue_text_area')
+          
 
         div(id='buttonarea' class='card card-buttons row')
 
